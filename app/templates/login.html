@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+    <p> SIGN IN </p>
+    <form activate = "" method="POST" novalidate >
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.username.label }} <br> {{ form.username }}
+            {% for error in form.username.errors %}
+                <span style = "coler : red ;"> [{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password.label }} <br> {{ form.password }}
+            {% for error in form.password.error %}
+                <span style = "color : red ;"> [{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p> {{ form.remember_me()}} <br> {{ form.remember_me.label}} </p>
+        <p> {{ form.submit() }}</p>
+    </form>
+{% endblock %}

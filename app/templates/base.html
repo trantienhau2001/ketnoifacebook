@@ -1,0 +1,14 @@
+<html>
+    <title>
+        {% if title %}
+            {{title}} - myblog
+        {% else %}
+            Welcome to my blog
+        {% endif %}
+    </title>
+    <body>
+        <div> Blog : <a href = "{{ url_for('index') }}"> home </a> &ensp; <a href = "{{url_for('login')}}">login</a> </div>
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>
